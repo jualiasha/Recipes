@@ -1,0 +1,62 @@
+header {
+  background: var(--pink-background);
+  background-position: cover;
+  padding: 3rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+
+  padding: 1rem;
+}
+
+ul li a:hover {
+  background-image: url("/src/assets/images/menu-hover.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: bottom;
+}
+
+.current {
+  background-image: url("/src/assets/images/menu-hover.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: bottom;
+}
+
+li {
+  display: inline;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  padding: 1rem;
+}
+
+.logo {
+  font-family: "Zilla Slab", serif;
+  font-size: 50px;
+}
+
+nav {
+  font-size: 50px;
+  font-family: var(--heading-font-family);
+}
+
+input[type="text"] {
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background: var(--blue-background);
+}

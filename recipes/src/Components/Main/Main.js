@@ -3,6 +3,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Recipes from "./Recipes";
 import About from "./About";
+import "./Main.css";
 
 const Homepage = () => {
   return (
@@ -27,12 +28,14 @@ const Aboutpage = () => {
   );
 };
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className={` ${props.current ? "current" : ""}`}>
+            Home
+          </Link>
         </li>
         <li>
           <Link to="/recipes">Recipes</Link>
@@ -47,15 +50,15 @@ const Nav = () => {
 
 const Main = () => {
   return (
-    <div>
-      <Nav />
+    <main>
       <Switch>
         <Route path="/" exact component={Homepage}></Route>
         <Route path="/recipes" component={Recipespage}></Route>
         <Route path="/about" component={Aboutpage}></Route>
       </Switch>
-    </div>
+    </main>
   );
 };
 
 export default Main;
+export { Nav };
