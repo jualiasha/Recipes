@@ -35,6 +35,7 @@ input {
 h1 {
   font-family: var(--heading-font-family);
   text-align: center;
+  font-size: 50px;
 }
 
 h2 {

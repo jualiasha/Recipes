@@ -1,21 +1,21 @@
 import React from "react";
 import { Component } from "react";
 import { Nav } from "../Main/Main";
-import Search from "./Search";
 
 import "./Header.css";
 
 class Header extends Component {
   state = {
-    active: false,
+    current: false,
     searchInput: "",
   };
 
-  CurrentLinkHandler = () => {};
-
-  SearchValueHandler = (event) => {
-    this.setState({ searchInput: event.target.value });
-    console.log(this.state.searchInput);
+  CurrentLinkHandler = () => {
+    if (this.href === window.location.href) {
+      this.setState.current = true;
+    } else {
+      this.setState.current = false;
+    }
   };
 
   render() {
@@ -25,9 +25,9 @@ class Header extends Component {
           <div className="navigation">
             <div className="logo">Recipes</div>
             <nav>
-              <Nav />
+              <Nav /* current={(this.state.current = true)} */ />
             </nav>
-            <Search search={this.SearchValueHandler} />
+            <button>Add recipe</button>
           </div>
         </div>
       </header>

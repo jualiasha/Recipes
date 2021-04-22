@@ -8,8 +8,9 @@ const Search = (props) => {
         id="search"
         name="search"
         onChange={props.search}
-        placeholder="Search"
+        placeholder="Find the one you need"
       />
+      <i className="fas fa-search"></i>
     </div>
   );
 };

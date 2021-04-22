@@ -55,8 +55,12 @@ nav {
   font-family: var(--heading-font-family);
 }
 
-input[type="text"] {
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  background: var(--blue-background);
+button {
+  background-color: transparent;
+  border: 3px solid #81f7fc;
+  padding: 0.5rem;
+  font-size: 30px;
+  color: #fff261;
+  font-family: var(--content-font-family);
+  cursor: pointer;
 }

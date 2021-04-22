@@ -71,3 +71,18 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.decor {
+  position: relative;
+  top: 5px;
+}
+
+input[type="text"] {
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background: var(--blue-background);
+  margin: 0 auto;
+  width: 30rem;
+  display: block;
+  padding: 0.7rem;
+}
