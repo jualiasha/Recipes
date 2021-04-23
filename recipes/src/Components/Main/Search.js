@@ -1,8 +1,10 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Search = (props) => {
   return (
-    <div>
+    <div className="searchinput">
       <input
         type="text"
         id="search"
@@ -10,7 +12,7 @@ const Search = (props) => {
         onChange={props.search}
         placeholder="Find the one you need"
       />
-      <i className="fas fa-search"></i>
+      <FontAwesomeIcon icon={faSearch} />
     </div>
   );
 };

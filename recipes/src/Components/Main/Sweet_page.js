@@ -1,11 +1,9 @@
-import React from "react";
-import Search from "./Search";
-import { Component } from "react";
+import React, { Component } from "react";
 import Categories from "./Categories";
-
+import Search from "./Search";
 import RecipeBox from "./RecipeBox";
 
-class Recipes extends Component {
+class Sweetslist extends Component {
   state = {
     recipes: [],
     isLoading: false,
@@ -22,7 +20,12 @@ class Recipes extends Component {
     console.log(this.state.searchInput);
   };
   render() {
-    const recipesfilter = this.state.recipes.filter((recipes) => {
+    const sweetsfilter = this.state.recipes.filter((recipes) => {
+      return recipes.category
+        .toLocaleLowerCase()
+        .includes("sweets".toLocaleLowerCase());
+    });
+    const recipesfilter = sweetsfilter.filter((recipes) => {
       return recipes.name
         .toLocaleLowerCase()
         .includes(this.state.searchInput.toLocaleLowerCase());
@@ -44,7 +47,7 @@ class Recipes extends Component {
       <div className="recipe-container">
         <div id="left">
           <Search search={this.SearchValueHandler} />
-          <h2 className="category-name">Best recipes ever</h2>
+          <h2 className="category-name">Sweets</h2>
           <div className="recipeslist">{recipeslist}</div>
         </div>
         <Categories />
@@ -53,4 +56,4 @@ class Recipes extends Component {
   }
 }
 
-export default Recipes;
+export default Sweetslist;

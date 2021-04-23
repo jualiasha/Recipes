@@ -35,7 +35,6 @@ li {
 
 .navigation {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   position: fixed;
@@ -63,4 +62,5 @@ button {
   color: #fff261;
   font-family: var(--content-font-family);
   cursor: pointer;
+  margin-right: 3rem;
 }

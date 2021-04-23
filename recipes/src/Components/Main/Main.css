@@ -57,6 +57,7 @@ main {
 .recipe-box {
   display: inline-block;
   width: 350px;
+  margin: 0 0.75rem;
 }
 
 .box img {
@@ -85,4 +86,25 @@ input[type="text"] {
   width: 30rem;
   display: block;
   padding: 0.7rem;
+  /* position: relative; */
+}
+
+/* .searchinput {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+} */
+
+.fa-search {
+  position: absolute;
+  left: 35rem;
+  bottom: 36rem;
+  font-size: 30px;
+  color: #620a0457;
+}
+
+.recipe-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
