@@ -7,31 +7,33 @@ import "./Categories.css";
 
 class Categories extends Component {
   state = {
-    /* salads: "Salads",
+    salads: "Salads",
     soups: "Soups",
     beef: "Beef",
     pork: "Pork",
     chicken: "Chicken",
     fish: "Fish",
     vegan: "Vegan",
-    sweets: "Sweets", */
+    sweets: "Sweets",
     recipes: [],
     isLoading: false,
   };
-
-  componentDidMount() {
-    this.setState({ isLoading: true });
-    fetch("http://localhost:3001/recipes")
-      .then((res) => res.json())
-      .then((data) => this.setState({ recipes: data, isLoading: false }));
-  }
 
   render() {
     return (
       <div id="right">
         <h3>Categories</h3>
         <div className="side-bar">
-          <SideNav />
+          <SideNav
+            sweetslink={this.state.sweets}
+            saladslink={this.state.salads}
+            soupslink={this.state.soups}
+            beeflink={this.state.beef}
+            porklink={this.state.pork}
+            chickenlink={this.state.chicken}
+            fishlink={this.state.fish}
+            veganlink={this.state.vegan}
+          />
         </div>
       </div>
     );

@@ -17,7 +17,7 @@ class Recipes extends Component {
       .then((res) => res.json())
       .then((data) => this.setState({ recipes: data, isLoading: false }));
   }
-  SearchValueHandler = (event) => {
+  searchValueHandler = (event) => {
     this.setState({ searchInput: event.target.value });
     console.log(this.state.searchInput);
   };
@@ -43,7 +43,7 @@ class Recipes extends Component {
     return (
       <div className="recipe-container">
         <div id="left">
-          <Search search={this.SearchValueHandler} />
+          <Search search={this.searchValueHandler} />
           <h2 className="category-name">Best recipes ever</h2>
           <div className="recipeslist">{recipeslist}</div>
         </div>

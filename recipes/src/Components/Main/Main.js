@@ -3,7 +3,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Recipes from "./Recipes";
 import About from "./About";
-import Sweetslist from "./Sweet_page";
+import Categorypage from "./Categorypage";
 import "./Main.css";
 
 const Homepage = () => {
@@ -32,28 +32,16 @@ const Aboutpage = () => {
 const Sweetspage = () => {
   return (
     <div>
-      <Sweetslist />
+      <Categorypage />
     </div>
   );
 };
 
 const Nav = (props) => {
-  /*  const home = <Link to="/"></Link>;
-  console.log(home.props.to);
-  console.log(window.location.href);
-
-  const recipe = <Link to="/recipes"></Link>; */
   return (
     <nav>
       <ul>
         <li>
-          {/*  {home.props.to === window.location.href ? (
-            <Link to="/" className="current">
-              Home
-            </Link>
-          ) : (
-            <Link to="/">Home</Link>
-          )} */}
           <Link to="/" className={` ${props.current ? "current" : ""}`}>
             Home
           </Link>
@@ -73,12 +61,21 @@ const Nav = (props) => {
   );
 };
 
-const SideNav = () => {
+const SideNav = ({
+  sweetslink,
+  saladslink,
+  soupslink,
+  beeflink,
+  porklink,
+  chickenlink,
+  fishlink,
+  veganlink,
+}) => {
   return (
     <ul>
       <li>
         <img className="li-image" src="/assets/images/salad.png" alt="salad" />
-        <Link to="/recipes/salads">Salads</Link>
+        <Link to={`/${saladslink}`}>{saladslink}</Link>
         <img
           className="li-image-after"
           src="/assets/images/spoon.png"
@@ -87,10 +84,10 @@ const SideNav = () => {
       </li>
       <li>
         <img className="li-image" src="/assets/images/soup.png" alt="soup" />
-        <Link to="/recipes/soups">Soups</Link>
+        <Link to={`/${soupslink}`}>{soupslink}</Link>
       </li>
       <li>
-        <Link to="/recipes/beef">Beef</Link>
+        <Link to={`/${beeflink}`}>{beeflink}</Link>
         <img
           className="li-image-after"
           src="/assets/images/fork.png"
@@ -103,10 +100,10 @@ const SideNav = () => {
           src="/assets/images/hot-meals.png"
           alt="hot-meals"
         />
-        <Link to="/recipes/pork">Pork</Link>
+        <Link to={`/${porklink}`}>{porklink}</Link>
       </li>
       <li>
-        <Link to="/recipes/chicken">Chicken</Link>
+        <Link to={`/${chickenlink}`}>{chickenlink}</Link>
         <img
           className="li-image-after"
           src="/assets/images/fork.png"
@@ -114,11 +111,11 @@ const SideNav = () => {
         />
       </li>
       <li>
-        <Link to="/recipes/fish">Fish</Link>
+        <Link to={`/${fishlink}`}>{fishlink}</Link>
       </li>
       <li>
         <img className="li-image" src="/assets/images/vegan.png" alt="vegan" />
-        <Link to="/recipes/vegan">Vegan</Link>
+        <Link to={`/${veganlink}`}>{veganlink}</Link>
         <img
           className="li-image-after"
           src="/assets/images/spoon.png"
@@ -131,7 +128,7 @@ const SideNav = () => {
           src="/assets/images/sweets.png"
           alt="sweets"
         />
-        <Link to="/sweets">Sweets</Link>
+        <Link to={`/${sweetslink}`}>{sweetslink}</Link>
       </li>
     </ul>
   );
@@ -145,6 +142,13 @@ const Main = () => {
         <Route path="/recipes" component={Recipespage}></Route>
         <Route path="/about" component={Aboutpage}></Route>
         <Route path="/sweets" component={Sweetspage}></Route>
+        <Route path="/vegan" component={Sweetspage}></Route>
+        <Route path="/fish" component={Sweetspage}></Route>
+        <Route path="/chicken" component={Sweetspage}></Route>
+        <Route path="/pork" component={Sweetspage}></Route>
+        <Route path="/beef" component={Sweetspage}></Route>
+        <Route path="/soups" component={Sweetspage}></Route>
+        <Route path="/salads" component={Sweetspage}></Route>
       </Switch>
     </main>
   );
