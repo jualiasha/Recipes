@@ -42,17 +42,29 @@ const Nav = (props) => {
     <nav>
       <ul>
         <li>
-          <Link to="/" className={` ${props.current ? "current" : ""}`}>
+          <Link
+            to="/"
+            onClick={props.homeclick}
+            className={`${props.homeactive ? "current" : ""}`}
+          >
             Home
           </Link>
         </li>
         <li>
-          <Link to="/recipes" className={` ${props.current ? "current" : ""}`}>
+          <Link
+            to="/recipes"
+            onClick={props.recipesclick}
+            className={`${props.recipesactive ? "current" : ""}`}
+          >
             Recipes
           </Link>
         </li>
         <li>
-          <Link to="/about" className={` ${props.current ? "current" : ""}`}>
+          <Link
+            to="/about"
+            onClick={props.aboutclick}
+            className={`${props.aboutactive ? "current" : ""}`}
+          >
             About
           </Link>
         </li>

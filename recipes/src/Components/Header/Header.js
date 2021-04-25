@@ -6,15 +6,40 @@ import "./Header.css";
 
 class Header extends Component {
   state = {
-    current: false,
+    recipesactive: false,
+    aboutactive: false,
+    homeactive: false,
     searchInput: "",
+    recipes: "recipes",
+    about: "about",
+    home: "home",
   };
 
-  CurrentLinkHandler = () => {
-    if (this.href === window.location.href) {
-      this.setState.current = true;
+  clickHandler = (link) => {
+    /* console.log(window.location.href); */
+    if (this.state.recipes === link) {
+      this.setState({ recipesactive: true });
+      this.setState({ homeactive: false });
+      this.setState({ aboutactive: false });
+    } else if (this.state.about === link) {
+      this.setState({
+        aboutactive: true,
+      });
+
+      this.setState({ recipesactive: false });
+      this.setState({ homeactive: false });
+    } else if (this.state.home === link) {
+      this.setState({
+        homeactive: true,
+      });
+      this.setState({ recipesactive: false });
+      this.setState({ aboutactive: false });
     } else {
-      this.setState.current = false;
+      this.setState({
+        homeactive: true,
+      });
+      this.setState({ recipesactive: false });
+      this.setState({ aboutactive: false });
     }
   };
 
@@ -25,7 +50,14 @@ class Header extends Component {
           <div className="navigation">
             <div className="logo">Recipes</div>
             <nav>
-              <Nav /* current={(this.state.current = true)} */ />
+              <Nav
+                recipesclick={() => this.clickHandler("recipes")}
+                recipesactive={this.state.recipesactive}
+                aboutclick={() => this.clickHandler("about")}
+                aboutactive={this.state.aboutactive}
+                homeclick={() => this.clickHandler("home")}
+                homeactive={this.state.homeactive}
+              />
             </nav>
             <button>Add recipe</button>
           </div>

@@ -8,11 +8,16 @@
   margin-top: 5px;
 }
 
+.side-bar ul li a:hover {
+  background-image: var(--pink-background);
+  /* background-color: aliceblue; */
+}
+
 .li-image {
   position: absolute;
-  right: 6rem;
+  right: 7rem;
   bottom: -6px;
-  width: 65%;
+  width: 60%;
   margin-right: 5px;
 }
 
@@ -37,4 +42,8 @@
 .category-name {
   font-size: 50px;
   font-family: var(--heading-font-family);
+}
+
+.side-bar a:hover {
+  background-image: none;
 }
