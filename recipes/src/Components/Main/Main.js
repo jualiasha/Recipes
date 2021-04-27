@@ -4,6 +4,8 @@ import Home from "./Home";
 import Recipes from "./Recipes";
 import About from "./About";
 import Categorypage from "./Categorypage";
+import RecipePage from "./RecipePage";
+
 import "./Main.css";
 
 const Homepage = () => {
@@ -162,6 +164,7 @@ const Main = () => {
         <Route path="/soups" component={Sweetspage}></Route>
         <Route path="/salads" component={Sweetspage}></Route>
       </Switch>
+      <RecipePage />
     </main>
   );
 };

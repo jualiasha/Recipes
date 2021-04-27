@@ -37,6 +37,9 @@
 
 #right {
   margin-left: 2rem;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
 
 .category-name {

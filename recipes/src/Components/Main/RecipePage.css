@@ -1,0 +1,58 @@
+.recipe-page {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.ingredients {
+  border-right: 1px solid var(--text-color);
+  padding: 1rem 2rem 1rem 1rem;
+  position: relative;
+}
+
+.ingredients li {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.recipe-numbers {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.r-numbers {
+  margin-left: 1rem;
+}
+
+.ingredients img {
+  position: absolute;
+  left: 12rem;
+}
+.ingredients img:nth-child(2) {
+  position: absolute;
+  left: 12rem;
+  top: 13rem;
+}
+.ingredients img:nth-child(3) {
+  position: absolute;
+  left: 12rem;
+  top: 22rem;
+}
+
+.ingredients img:nth-child(4) {
+  position: absolute;
+  left: 12rem;
+  top: 31rem;
+}
+
+.ingredients img:nth-child(5) {
+  position: absolute;
+  left: 12rem;
+  top: 41rem;
+}
