@@ -71,6 +71,7 @@ class Categorypage extends Component {
         .includes(this.state.salads.toLocaleLowerCase());
     });
     const location = window.location.href;
+    console.log(location);
     const whatpage = location.includes("Vegan")
       ? veganfilter
       : location.includes("Sweets")
@@ -122,6 +123,7 @@ class Categorypage extends Component {
           preptime={recipes.prepTime}
           cooktime={recipes.cookTime}
           img={recipes.img}
+          link={recipes.id}
         />
       );
     });

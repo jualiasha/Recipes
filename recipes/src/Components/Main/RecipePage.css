@@ -7,11 +7,13 @@
 .ingredients {
   border-right: 1px solid var(--text-color);
   padding: 1rem 2rem 1rem 1rem;
-  position: relative;
+  position: sticky;
+  bottom: 0;
+  align-self: flex-end;
 }
 
 .ingredients li {
-  display: block;
+  display: list-item;
   margin-bottom: 1rem;
 }
 
@@ -22,12 +24,29 @@ ol {
 
 .recipe-numbers {
   display: flex;
-  justify-content: space-between;
+  margin-bottom: 1rem;
   flex-direction: row;
+}
+
+.recipe-numbers img {
+  width: 70%;
+}
+
+.recipe-steps {
+  margin: 1rem;
+}
+
+.recipe-steps button {
+  color: #ffa6f3;
 }
 
 .r-numbers {
   margin-left: 1rem;
+}
+
+.r-numbers p {
+  margin-bottom: 1rem;
+  font-size: 24px;
 }
 
 .ingredients img {

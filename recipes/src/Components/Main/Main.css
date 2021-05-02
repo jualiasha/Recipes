@@ -73,6 +73,10 @@ main {
   flex-wrap: wrap;
 }
 
+.recipeslist a {
+  color: var(--text-color);
+}
+
 .decor {
   position: relative;
   top: 5px;

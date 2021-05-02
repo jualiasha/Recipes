@@ -37,6 +37,7 @@ class Recipes extends Component {
           preptime={recipes.prepTime}
           cooktime={recipes.cookTime}
           img={recipes.img}
+          link={recipes.id}
         />
       );
     });

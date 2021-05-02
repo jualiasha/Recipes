@@ -16,25 +16,10 @@ const Homepage = () => {
   );
 };
 
-const Recipespage = () => {
-  return (
-    <div>
-      <Recipes />
-    </div>
-  );
-};
 const Aboutpage = () => {
   return (
     <div>
       <About />
-    </div>
-  );
-};
-
-const Sweetspage = () => {
-  return (
-    <div>
-      <Categorypage />
     </div>
   );
 };
@@ -153,18 +138,38 @@ const Main = () => {
     <main>
       <Switch>
         <Route path="/" exact component={Homepage}></Route>
-        <Route path="/recipes" component={Recipespage}></Route>
+        <Route path="/recipes/:id">
+          <RecipePage />
+        </Route>
+        <Route path="/recipes">
+          <Recipes />
+        </Route>
         <Route path="/about" component={Aboutpage}></Route>
-        <Route path="/sweets" component={Sweetspage}></Route>
-        <Route path="/vegan" component={Sweetspage}></Route>
-        <Route path="/fish" component={Sweetspage}></Route>
-        <Route path="/chicken" component={Sweetspage}></Route>
-        <Route path="/pork" component={Sweetspage}></Route>
-        <Route path="/beef" component={Sweetspage}></Route>
-        <Route path="/soups" component={Sweetspage}></Route>
-        <Route path="/salads" component={Sweetspage}></Route>
+        <Route path="/sweets">
+          <Categorypage />
+        </Route>
+        <Route path="/vegan">
+          <Categorypage />
+        </Route>
+        <Route path="/fish">
+          <Categorypage />
+        </Route>
+        <Route path="/chicken">
+          <Categorypage />
+        </Route>
+        <Route path="/pork">
+          <Categorypage />
+        </Route>
+        <Route path="/beef">
+          <Categorypage />
+        </Route>
+        <Route path="/soups">
+          <Categorypage />
+        </Route>
+        <Route path="/salads">
+          <Categorypage />
+        </Route>
       </Switch>
-      <RecipePage />
     </main>
   );
 };
