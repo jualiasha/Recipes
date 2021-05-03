@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+import Modal from "./Modal";
 import { Nav } from "../Main/Main";
 
 import "./Header.css";
@@ -62,8 +63,7 @@ class Header extends Component {
                 homeactive={this.state.homeactive}
               />
             </nav>
-
-            <button>Add recipe</button>
+            <Modal />
           </div>
         </div>
       </header>

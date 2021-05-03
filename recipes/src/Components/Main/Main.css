@@ -82,7 +82,7 @@ main {
   top: 5px;
 }
 
-input[type="text"] {
+.searchinput input[type="text"] {
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   background: var(--blue-background);
