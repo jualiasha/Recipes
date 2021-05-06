@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 import Home from "./Home";
 import Recipes from "./Recipes";
 import About from "./About";
@@ -29,31 +29,35 @@ const Nav = (props) => {
     <nav>
       <ul>
         <li>
-          <Link
+          <NavLink
+            exact
             to="/"
-            onClick={props.homeclick}
-            className={`${props.homeactive ? "current" : ""}`}
+            activeClassName="current"
+            /*  onClick={props.homeclick}
+            className={`${props.homeactive ? "current" : ""}`} */
           >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
+            activeClassName="current"
             to="/recipes"
-            onClick={props.recipesclick}
-            className={`${props.recipesactive ? "current" : ""}`}
+            /* onClick={props.recipesclick}
+            className={`${props.recipesactive ? "current" : ""}`} */
           >
             Recipes
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
+            activeClassName="current"
             to="/about"
-            onClick={props.aboutclick}
-            className={`${props.aboutactive ? "current" : ""}`}
+            /* onClick={props.aboutclick}
+            className={`${props.aboutactive ? "current" : ""}`} */
           >
             About
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
@@ -74,7 +78,7 @@ const SideNav = ({
     <ul>
       <li>
         <img className="li-image" src="/assets/images/salad.png" alt="salad" />
-        <Link to={`/${saladslink}`}>{saladslink}</Link>
+        <NavLink to={`/${saladslink}`}>{saladslink}</NavLink>
         <img
           className="li-image-after"
           src="/assets/images/spoon.png"
@@ -83,10 +87,10 @@ const SideNav = ({
       </li>
       <li>
         <img className="li-image" src="/assets/images/soup.png" alt="soup" />
-        <Link to={`/${soupslink}`}>{soupslink}</Link>
+        <NavLink to={`/${soupslink}`}>{soupslink}</NavLink>
       </li>
       <li>
-        <Link to={`/${beeflink}`}>{beeflink}</Link>
+        <NavLink to={`/${beeflink}`}>{beeflink}</NavLink>
         <img
           className="li-image-after"
           src="/assets/images/fork.png"
@@ -99,10 +103,10 @@ const SideNav = ({
           src="/assets/images/hot-meals.png"
           alt="hot-meals"
         />
-        <Link to={`/${porklink}`}>{porklink}</Link>
+        <NavLink to={`/${porklink}`}>{porklink}</NavLink>
       </li>
       <li>
-        <Link to={`/${chickenlink}`}>{chickenlink}</Link>
+        <NavLink to={`/${chickenlink}`}>{chickenlink}</NavLink>
         <img
           className="li-image-after"
           src="/assets/images/fork.png"
@@ -110,11 +114,11 @@ const SideNav = ({
         />
       </li>
       <li>
-        <Link to={`/${fishlink}`}>{fishlink}</Link>
+        <NavLink to={`/${fishlink}`}>{fishlink}</NavLink>
       </li>
       <li>
         <img className="li-image" src="/assets/images/vegan.png" alt="vegan" />
-        <Link to={`/${veganlink}`}>{veganlink}</Link>
+        <NavLink to={`/${veganlink}`}>{veganlink}</NavLink>
         <img
           className="li-image-after"
           src="/assets/images/spoon.png"
@@ -127,7 +131,7 @@ const SideNav = ({
           src="/assets/images/sweets.png"
           alt="sweets"
         />
-        <Link to={`/${sweetslink}`}>{sweetslink}</Link>
+        <NavLink to={`/${sweetslink}`}>{sweetslink}</NavLink>
       </li>
     </ul>
   );

@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
+  right: {
+    textAlign: "right",
+    cursor: "pointer",
+  },
 }));
 
 export default function TransitionsModal() {
@@ -50,6 +54,9 @@ export default function TransitionsModal() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
+            <p className={classes.right} onClick={handleClose}>
+              X
+            </p>
             <h2 id="transition-modal-title">Add your recipe</h2>
 
             <Form />
