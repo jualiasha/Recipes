@@ -1,11 +1,15 @@
 form {
   display: flex;
   flex-direction: column;
-  /* overflow: scroll; */
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 form button {
   align-self: center;
+}
+#cookTime {
+  margin: 0 1rem;
 }
 
 .horizont {
@@ -24,6 +28,13 @@ form button {
 
 #add {
   margin-left: 1rem;
+  margin-top: 0.3rem;
+  width: 8.3rem;
+}
+
+#adddesc {
+  width: 50%;
+  align-self: flex-start;
 }
 
 button[type="submit"] {

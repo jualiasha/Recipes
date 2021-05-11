@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import Modal from "./Modal";
+import { Link } from "react-router-dom";
 import { Nav } from "../Main/Main";
 
 import "./Header.css";
@@ -63,7 +63,10 @@ class Header extends Component {
                 homeactive={this.state.homeactive}
               />
             </nav>
-            <Modal />
+
+            <Link id="button" to="/addrecipe" role="button">
+              Add recipe
+            </Link>
           </div>
         </div>
       </header>

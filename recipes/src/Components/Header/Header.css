@@ -64,3 +64,15 @@ button {
   cursor: pointer;
   margin-right: 3rem;
 }
+
+#button {
+  background-color: transparent;
+  border: 3px solid #81f7fc;
+  padding: 0.5rem;
+  font-size: 30px;
+  color: #fff261;
+  font-family: var(--content-font-family);
+  cursor: pointer;
+  margin-right: 3rem;
+  text-decoration: none;
+}

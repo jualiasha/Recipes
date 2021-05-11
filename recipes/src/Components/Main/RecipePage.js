@@ -4,8 +4,28 @@ import axios from "axios";
 import Categories from "./Categories";
 import "./RecipePage.css";
 
+import { withStyles } from "@material-ui/core/styles";
+import { green } from "@material-ui/core/colors";
+
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+
+const GreenCheckbox = withStyles({
+  root: {
+    color: green[400],
+    "&$checked": {
+      color: green[600],
+    },
+  },
+  checked: {},
+})((props) => <Checkbox color="default" {...props} />);
+
 const RecipePage = () => {
   const [recipe, setRecipe] = useState();
+  const [state, setState] = useState({
+    checked: false,
+  });
+
   let { id } = useParams();
   let history = useHistory();
 
@@ -16,6 +36,9 @@ const RecipePage = () => {
         .then((res) => setRecipe(res.data));
     }
   });
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
   let recipedata = undefined;
 
   if (!recipe) {
@@ -23,6 +46,26 @@ const RecipePage = () => {
   }
 
   if (recipe) {
+    const listingr = recipe.ingredients.map((i) => {
+      return <li key={i}>{i}</li>;
+    });
+    const steplist = recipe.description.map((steps, number) => {
+      return (
+        <div key={steps} className="steps">
+          <FormControlLabel
+            control={
+              <GreenCheckbox
+                checked={state.checkedG}
+                onChange={handleChange}
+                name="checked"
+                {...number}
+              />
+            }
+            label={steps}
+          />
+        </div>
+      );
+    });
     recipedata = (
       <>
         <h1>{recipe.name}</h1>
@@ -34,22 +77,7 @@ const RecipePage = () => {
             <img src="/assets/images/circle3.png" alt="ingredients decor" />
             <img src="/assets/images/circle4.png" alt="ingredients decor" />
             <img src="/assets/images/circle5.png" alt="ingredients decor" />
-            <ol>
-              <li>something</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-              <li>something2</li>
-            </ol>
+            <ol>{listingr}</ol>
           </div>
           <div className="recipe-steps">
             <div className="recipe-numbers">
@@ -60,13 +88,13 @@ const RecipePage = () => {
                 <p>Serve: {recipe.serves}</p>
               </div>
             </div>
-            <p>{recipe.description}</p>
+            {steplist}
             <button
               onClick={() => {
                 history.goBack();
               }}
             >
-              Back to previous page
+              Back to Recipes
             </button>
           </div>
           <Categories />

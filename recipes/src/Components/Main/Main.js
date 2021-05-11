@@ -5,6 +5,7 @@ import Recipes from "./Recipes";
 import About from "./About";
 import Categorypage from "./Categorypage";
 import RecipePage from "./RecipePage";
+import Form from "../Header/Form";
 
 import "./Main.css";
 
@@ -172,6 +173,9 @@ const Main = () => {
         </Route>
         <Route path="/salads">
           <Categorypage />
+        </Route>
+        <Route path="/addrecipe">
+          <Form />
         </Route>
       </Switch>
     </main>

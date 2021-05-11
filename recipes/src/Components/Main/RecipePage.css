@@ -8,8 +8,8 @@
   border-right: 1px solid var(--text-color);
   padding: 1rem 2rem 1rem 1rem;
   position: sticky;
-  bottom: 0;
-  align-self: flex-end;
+  top: 80px;
+  align-self: flex-start;
 }
 
 .ingredients li {
@@ -37,7 +37,7 @@ ol {
 }
 
 .recipe-steps button {
-  color: #ffa6f3;
+  color: #c5a1ff;
 }
 
 .r-numbers {
@@ -74,4 +74,12 @@ ol {
   position: absolute;
   left: 12rem;
   top: 41rem;
+}
+
+.steps {
+  margin: 1.5rem 0 1.5rem 1.5rem;
+}
+
+label {
+  font-size: 20px;
 }
