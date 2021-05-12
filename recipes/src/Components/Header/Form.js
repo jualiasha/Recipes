@@ -6,6 +6,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Button from "@material-ui/core/Button";
 import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+
 import axios from "axios";
 import "./Forms.css";
 
@@ -30,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
     width: "34%",
     marginLeft: "0.8rem",
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 270,
+    bottom: "0.25rem",
+  },
 }));
 
 export default function BasicTextFields() {
@@ -39,26 +46,32 @@ export default function BasicTextFields() {
     img: "",
     category: "",
     ingrnumber: "1",
-    description: "",
+    description: [],
     prepTime: "",
     cookTime: "",
     serves: "",
-    ingredients: [],
+    ingredients: [""],
   });
   /* const [ingredients, setIngredients] = useState([{ id: 1, ingr: "" }]); */
-  const [ingredients, setIngredients] = useState([""]);
+  const [inc, setInc] = useState([""]);
   const [description, setDescription] = useState([""]);
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
+  const setList = (e, i) => {
+    const list = [...inc];
+    list[i] = e.target.value;
+    setInc(list);
+    console.log("this is list:", list);
+  };
+
   const changeIngrData = (e, i) => {
-    const { value } = e.target;
-    const list = [...ingredients];
-    list[i] = value;
-    setIngredients(list);
-    setValues({ ...values, ingredients: ingredients });
+    /* const { value } = e.target; */
+    setList(e, i);
+    setValues((prevValues) => ({ ...prevValues, ingredients: inc }));
+    console.log("this is values:", values.ingredients);
   };
   const changeDescData = (e, u) => {
     const { value } = e.target;
@@ -72,8 +85,8 @@ export default function BasicTextFields() {
     e.preventDefault();
     const newIngr = "";
 
-    setIngredients([...ingredients, newIngr]);
-    setValues({ ...values, ingrnumber: ingredients.length });
+    setInc([...inc, newIngr]);
+    setValues({ ...values, ingrnumber: inc.length });
   };
   const stepsadd = (e, u) => {
     console.log("wow, you clicked", description.length);
@@ -83,8 +96,9 @@ export default function BasicTextFields() {
   };
 
   const submitData = (e) => {
+    e.preventDefault();
     axios.post("http://localhost:3001/recipes", values);
-    alert("Recipe is posted", window.location.reload());
+    /* alert("Recipe is posted", window.location.reload()); */
   };
 
   return (
@@ -115,15 +129,29 @@ export default function BasicTextFields() {
             required
             onChange={handleChange}
           />
-          <TextField
-            id="category"
-            name="category"
-            className={classes.width32}
-            label="Category"
-            variant="outlined"
-            required
-            onChange={handleChange}
-          />
+          <FormControl variant="outlined" className={classes.formControl}>
+            <InputLabel htmlFor="category">Category</InputLabel>
+            <Select
+              native
+              value={values.category}
+              onChange={handleChange}
+              label="Category"
+              inputProps={{
+                name: "category",
+                id: "category",
+              }}
+            >
+              <option aria-label="None" value="" />
+              <option value={"Salads"}>Salads</option>
+              <option value={"Soups"}>Soups</option>
+              <option value={"Beef"}>Beef</option>
+              <option value={"Pork"}>Pork</option>
+              <option value={"Chicken"}>Chicken</option>
+              <option value={"Fish"}>Fish</option>
+              <option value={"Vegan"}>Vegan</option>
+              <option value={"Sweets"}>Sweets</option>
+            </Select>
+          </FormControl>
         </div>
         <div className="horizont">
           <FormControl className={classes.margin} variant="outlined">
@@ -201,7 +229,7 @@ export default function BasicTextFields() {
         </Button>
 
         <div className="horizont-ingr">
-          {ingredients.map((_, i) => {
+          {inc.map((_, i) => {
             return (
               <TextField
                 key={i}

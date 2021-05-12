@@ -25,38 +25,22 @@ const Aboutpage = () => {
   );
 };
 
-const Nav = (props) => {
+const Nav = () => {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink
-            exact
-            to="/"
-            activeClassName="current"
-            /*  onClick={props.homeclick}
-            className={`${props.homeactive ? "current" : ""}`} */
-          >
+          <NavLink exact to="/" activeClassName="current">
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink
-            activeClassName="current"
-            to="/recipes"
-            /* onClick={props.recipesclick}
-            className={`${props.recipesactive ? "current" : ""}`} */
-          >
+          <NavLink activeClassName="current" to="/recipes">
             Recipes
           </NavLink>
         </li>
         <li>
-          <NavLink
-            activeClassName="current"
-            to="/about"
-            /* onClick={props.aboutclick}
-            className={`${props.aboutactive ? "current" : ""}`} */
-          >
+          <NavLink activeClassName="current" to="/about">
             About
           </NavLink>
         </li>

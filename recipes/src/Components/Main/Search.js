@@ -1,6 +1,7 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import SearchIcon from "@material-ui/icons/Search";
+/* import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons"; */
 
 const Search = (props) => {
   return (
@@ -12,7 +13,7 @@ const Search = (props) => {
         onChange={props.search}
         placeholder="Find the one you need"
       />
-      <FontAwesomeIcon icon={faSearch} />
+      <SearchIcon />
     </div>
   );
 };

@@ -49,6 +49,11 @@ li {
   font-size: 50px;
 }
 
+#logolink {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 nav {
   font-size: 50px;
   font-family: var(--heading-font-family);
