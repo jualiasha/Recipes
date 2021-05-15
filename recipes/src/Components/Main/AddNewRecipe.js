@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
@@ -45,67 +45,59 @@ export default function BasicTextFields() {
     name: "",
     img: "",
     category: "",
-    ingrnumber: "",
+    ingrnumber: "1",
     description: [],
     prepTime: "",
     cookTime: "",
     serves: "",
-    ingredients: [],
+    ingredients: [""],
   });
   /* const [ingredients, setIngredients] = useState([{ id: 1, ingr: "" }]); */
-  const [inc, setInc] = useState([" "]);
-  const [desc, setDesc] = useState([" "]);
+  const [inc, setInc] = useState([""]);
+  const [description, setDescription] = useState([""]);
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-  const changeIngrData = (e, i) => {
+  const setList = (e, i) => {
     const list = [...inc];
     list[i] = e.target.value;
     setInc(list);
+    console.log("this is list:", list);
   };
 
-  useEffect(() => {
+  const changeIngrData = (e, i) => {
+    /* const { value } = e.target; */
+    setList(e, i);
     setValues((prevValues) => ({ ...prevValues, ingredients: inc }));
-  }, [inc]);
-
-  const changeDescData = (e, i) => {
-    const desclist = [...desc];
-    desclist[i] = e.target.value;
-    setDesc(desclist);
+    console.log("this is values:", values.ingredients);
   };
-
-  useEffect(() => {
-    setValues((prevValues) => ({ ...prevValues, description: desc }));
-  }, [desc]);
+  const changeDescData = (e, u) => {
+    const { value } = e.target;
+    const desclist = [...description];
+    desclist[u] = value;
+    setDescription(desclist);
+    setValues({ ...values, description: description });
+  };
 
   const addMore = (e, i) => {
     e.preventDefault();
     const newIngr = "";
+
     setInc([...inc, newIngr]);
     setValues({ ...values, ingrnumber: inc.length });
   };
-
-  const stepsadd = (e, i) => {
-    console.log("wow, you clicked", desc.length);
+  const stepsadd = (e, u) => {
+    console.log("wow, you clicked", description.length);
     e.preventDefault();
     const newStep = "";
-    setDesc([...desc, newStep]);
+    setDescription([...description, newStep]);
   };
 
-  const submitData = async (e) => {
-    /* e.preventDefault(); */
-    let path = window.location.href;
-    let query = path.split("?");
-    let addquery = await query[1];
-    /* axios.post("https://lit-sierra-74086.herokuapp.com/recipe/addnew", values); */
-    console.log(addquery);
-    axios.post(
-      `https://lit-sierra-74086.herokuapp.com/recipe/addnew?${addquery}`,
-      values
-    );
-    /* axios.post(`https://lit-sierra-74086.herokuapp.com/recipe/addmore`, values); */
+  const submitData = (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:3001/recipes", values);
     /* alert("Recipe is posted", window.location.reload()); */
   };
 
@@ -208,12 +200,12 @@ export default function BasicTextFields() {
             />
           </FormControl>
         </div>
-        {desc.map((_, i) => {
-          let stepnumber = i + 1;
+        {description.map((_, u) => {
+          let stepnumber = description.length;
 
           return (
             <TextField
-              key={i}
+              key={u}
               id="desc"
               name="desc"
               label={`Step ${stepnumber}`}
@@ -222,7 +214,7 @@ export default function BasicTextFields() {
               defaultValue="Step description here"
               variant="outlined"
               required
-              onChange={(e) => changeDescData(e, i)}
+              onChange={(e) => changeDescData(e, u)}
             />
           );
         })}
@@ -235,15 +227,6 @@ export default function BasicTextFields() {
         >
           Add Next Step
         </Button>
-        <TextField
-          id="ingrnumber"
-          name="ingrnumber"
-          className={classes.width32}
-          label="Total Number of Ingredients"
-          variant="outlined"
-          size="small"
-          value={values.ingrnumber + 1}
-        />
 
         <div className="horizont-ingr">
           {inc.map((_, i) => {

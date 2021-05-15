@@ -19,7 +19,7 @@ class Categorypage extends Component {
   };
   componentDidMount() {
     this.setState({ isLoading: true });
-    fetch("http://localhost:3001/recipes")
+    fetch("https://lit-sierra-74086.herokuapp.com/recipe/all")
       .then((res) => res.json())
       .then((data) => this.setState({ recipes: data, isLoading: false }));
   }
@@ -71,7 +71,7 @@ class Categorypage extends Component {
         .includes(this.state.salads.toLocaleLowerCase());
     });
     const location = window.location.href;
-    console.log(location);
+
     const whatpage = location.includes("Vegan")
       ? veganfilter
       : location.includes("Sweets")

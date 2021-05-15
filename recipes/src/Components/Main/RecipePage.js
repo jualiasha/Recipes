@@ -32,7 +32,7 @@ const RecipePage = () => {
   useEffect(() => {
     if (!recipe) {
       axios
-        .get("http://localhost:3001/recipes/" + id)
+        .get("https://lit-sierra-74086.herokuapp.com/recipe/find/" + id)
         .then((res) => setRecipe(res.data));
     }
   });
