@@ -11,7 +11,7 @@ const Search = (props) => {
         onChange={props.search}
         placeholder="Find the one you need"
       />
-      <SearchIcon />
+      <SearchIcon style={{ fontSize: 38 }} />
     </div>
   );
 };

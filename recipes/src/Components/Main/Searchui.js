@@ -25,7 +25,7 @@ export default function InputWithIcon({ search }) {
         alignItems="flex-end"
       >
         <Grid item>
-          <SearchIcon />
+          <SearchIcon style={{ fontSize: 35 }} />
         </Grid>
         <Grid item>
           <TextField id="search" label="Find recipe" onChange={search} />

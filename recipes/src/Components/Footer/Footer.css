@@ -2,4 +2,27 @@ footer {
   background: var(--purple-background);
   margin-top: 50px;
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+footer ul li {
+  display: block;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+footer ul li a:hover {
+  color: #944d4b;
+  background-image: none;
+}
+
+footer img {
+  position: absolute;
+  bottom: 0px;
+  right: 7rem;
+  z-index: 990;
+  width: 45rem;
 }
