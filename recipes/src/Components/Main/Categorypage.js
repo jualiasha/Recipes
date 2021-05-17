@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Categories from "./Categories";
-import Search from "./Search";
+import Searchui from "./Searchui";
 import RecipeBox from "./RecipeBox";
 
 class Categorypage extends Component {
@@ -128,14 +128,18 @@ class Categorypage extends Component {
       );
     });
     return (
-      <div className="recipe-container">
-        <div id="left">
-          <Search search={this.searchValueHandler} />
-          <h2 className="category-name">{whatpagename}</h2>
-          <div className="recipeslist">{recipeslist}</div>
+      <>
+        <div className="searchpart">
+          <Searchui search={this.searchValueHandler} />
         </div>
-        <Categories />
-      </div>
+        <div className="recipe-container">
+          <div id="left">
+            <h2 className="category-name">{whatpagename}</h2>
+            <div className="recipeslist">{recipeslist}</div>
+          </div>
+          <Categories />
+        </div>
+      </>
     );
   }
 }

@@ -1,13 +1,11 @@
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
-/* import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons"; */
 
 const Search = (props) => {
   return (
     <div className="searchinput">
       <input
-        type="text"
+        type="search"
         id="search"
         name="search"
         onChange={props.search}

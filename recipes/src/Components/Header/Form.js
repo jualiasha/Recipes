@@ -94,19 +94,19 @@ export default function BasicTextFields() {
     setDesc([...desc, newStep]);
   };
 
-  const submitData = async (e) => {
+  const submitData = (e) => {
     /* e.preventDefault(); */
     let path = window.location.href;
     let query = path.split("?");
-    let addquery = await query[1];
-    /* axios.post("https://lit-sierra-74086.herokuapp.com/recipe/addnew", values); */
+    let addquery = query[1];
+    axios.post("https://lit-sierra-74086.herokuapp.com/recipe/addmore", values);
     console.log(addquery);
-    axios.post(
+    /* axios.post(
       `https://lit-sierra-74086.herokuapp.com/recipe/addnew?${addquery}`,
       values
-    );
+    ); */
     /* axios.post(`https://lit-sierra-74086.herokuapp.com/recipe/addmore`, values); */
-    /* alert("Recipe is posted", window.location.reload()); */
+    /* alert("Recipe is posted"); */
   };
 
   return (
@@ -238,6 +238,7 @@ export default function BasicTextFields() {
         <TextField
           id="ingrnumber"
           name="ingrnumber"
+          disabled
           className={classes.width32}
           label="Total Number of Ingredients"
           variant="outlined"

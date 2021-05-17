@@ -1,8 +1,8 @@
 import React from "react";
-import Search from "./Search";
+/* import Search from "./Search"; */
 import { Component } from "react";
 import Categories from "./Categories";
-
+import Searchui from "./Searchui";
 import RecipeBox from "./RecipeBox";
 
 class Recipes extends Component {
@@ -42,14 +42,18 @@ class Recipes extends Component {
       );
     });
     return (
-      <div className="recipe-container">
-        <div id="left">
-          <Search search={this.searchValueHandler} />
-          <h2 className="category-name">Best recipes ever</h2>
-          <div className="recipeslist">{recipeslist}</div>
+      <>
+        <div className="searchpart">
+          <Searchui search={this.searchValueHandler} />
         </div>
-        <Categories />
-      </div>
+        <div className="recipe-container">
+          <div id="left">
+            <h2 className="category-name">Best recipes ever</h2>
+            <div className="recipeslist">{recipeslist}</div>
+          </div>
+          <Categories />
+        </div>
+      </>
     );
   }
 }

@@ -18,6 +18,11 @@ form button {
   justify-content: space-between;
 }
 
+.horizont-ingr {
+  position: relative;
+  right: 10px;
+}
+
 #namefield {
   width: 350px;
 }

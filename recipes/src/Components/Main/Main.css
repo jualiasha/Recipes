@@ -82,7 +82,7 @@ main {
   top: 5px;
 }
 
-.searchinput input[type="text"] {
+.searchinput input[type="search"] {
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   background: var(--blue-background);
@@ -93,18 +93,12 @@ main {
   /* position: relative; */
 }
 
-/* .searchinput {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-} */
+.MuiInput-underline:before {
+  border-bottom: 1px solid #00bcd4 !important;
+}
 
-.fa-search {
-  position: absolute;
-  left: 35rem;
-  bottom: 36rem;
-  font-size: 30px;
-  color: #620a0457;
+.MuiInput-root {
+  width: 30rem !important;
 }
 
 .recipe-container {
