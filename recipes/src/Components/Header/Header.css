@@ -68,6 +68,7 @@ button {
   font-family: var(--content-font-family);
   cursor: pointer;
   margin-right: 3rem;
+  z-index: 999;
 }
 
 #button {

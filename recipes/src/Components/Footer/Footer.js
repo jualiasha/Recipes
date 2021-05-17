@@ -3,8 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import "./Footer.css";
 
-const Footer = () => {
-  const [image, setImage] = useState({
+const Footer = ({ image }) => {
+  /* const [image, setImage] = useState({
     homeimage: "/footerhome",
     recipeimage: "/footereipe",
     recipepage: "/recipepage",
@@ -18,7 +18,7 @@ const Footer = () => {
     } else {
       setImage(image.recipepage);
     }
-  };
+  }; */
 
   return (
     <footer>
@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
       <div className="footerimage">
         <img src="/assets/images/homefooter.png" alt="footerimage" />
-        {handleImage}
+        {image}
       </div>
       <div className="footermenu">
         <ul>
