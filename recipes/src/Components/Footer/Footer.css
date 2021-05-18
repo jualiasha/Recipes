@@ -1,7 +1,7 @@
 footer {
   background: var(--purple-background);
   margin-top: 50px;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,4 +25,8 @@ footer img {
   right: 10rem;
   z-index: 990;
   width: 40rem;
+}
+
+footer a {
+  color: #fff261;
 }

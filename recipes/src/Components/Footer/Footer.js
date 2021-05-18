@@ -1,24 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import "./Footer.css";
 
-const Footer = ({ image }) => {
-  /* const [image, setImage] = useState({
-    homeimage: "/footerhome",
-    recipeimage: "/footereipe",
-    recipepage: "/recipepage",
-  });
+const Footer = () => {
   let location = useLocation();
-  const handleImage = () => {
-    if (location.pathname === "/recipes") {
-      return setImage(image.recipeimage);
-    } else if (location.pathname === "/") {
-      return setImage(image.homeimage);
-    } else {
-      setImage(image.recipepage);
-    }
-  }; */
+
+  const renderfooterimage = location.pathname.includes("recipes")
+    ? "/assets/images/recipesfooter.png"
+    : location.pathname.includes("about")
+    ? "/assets/images/Starsfooter.png"
+    : "/assets/images/homefooter.png";
 
   return (
     <footer>
@@ -29,10 +23,30 @@ const Footer = ({ image }) => {
             Recipes
           </Link>
         </div>
+        <a
+          href="https://github.com/jualiasha/Recipes-webApp/tree/master/recipes"
+          target="_blanc"
+        >
+          <GitHubIcon
+            style={{
+              fontSize: 44,
+              margin: "3rem 1rem 0 1rem",
+              backgroundColor: "#b392e6",
+            }}
+          />
+        </a>
+        <a href="https://www.linkedin.com/in/jualiasha/" target="_blanc">
+          <LinkedInIcon
+            style={{
+              fontSize: 44,
+              margin: "3rem 1rem 0 1rem",
+              backgroundColor: "#b392e6",
+            }}
+          />
+        </a>
       </div>
       <div className="footerimage">
-        <img src="/assets/images/homefooter.png" alt="footerimage" />
-        {image}
+        <img src={renderfooterimage} alt="footerimage" />
       </div>
       <div className="footermenu">
         <ul>

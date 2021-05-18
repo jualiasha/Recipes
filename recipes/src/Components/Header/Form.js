@@ -63,7 +63,10 @@ export default function BasicTextFields() {
   const changeIngrData = (e, i) => {
     const list = [...inc];
     list[i] = e.target.value;
-    setInc(list);
+
+    if (list[i].length > 0) {
+      setInc(list);
+    }
   };
 
   useEffect(() => {
@@ -73,7 +76,9 @@ export default function BasicTextFields() {
   const changeDescData = (e, i) => {
     const desclist = [...desc];
     desclist[i] = e.target.value;
-    setDesc(desclist);
+    if (desclist[i].length > 0) {
+      setDesc(desclist);
+    }
   };
 
   useEffect(() => {
@@ -84,29 +89,22 @@ export default function BasicTextFields() {
     e.preventDefault();
     const newIngr = "";
     setInc([...inc, newIngr]);
-    setValues({ ...values, ingrnumber: inc.length });
+
+    setValues({ ...values, ingrnumber: inc.length + 1 });
   };
 
   const stepsadd = (e, i) => {
-    console.log("wow, you clicked", desc.length);
     e.preventDefault();
     const newStep = "";
     setDesc([...desc, newStep]);
   };
 
   const submitData = (e) => {
-    /* e.preventDefault(); */
-    let path = window.location.href;
-    let query = path.split("?");
-    let addquery = query[1];
+    e.preventDefault();
+
     axios.post("https://lit-sierra-74086.herokuapp.com/recipe/addmore", values);
-    console.log(addquery);
-    /* axios.post(
-      `https://lit-sierra-74086.herokuapp.com/recipe/addnew?${addquery}`,
-      values
-    ); */
-    /* axios.post(`https://lit-sierra-74086.herokuapp.com/recipe/addmore`, values); */
-    /* alert("Recipe is posted"); */
+
+    alert("Recipe is posted");
   };
 
   return (
@@ -208,6 +206,38 @@ export default function BasicTextFields() {
             />
           </FormControl>
         </div>
+        <TextField
+          id="ingrnumber"
+          name="ingrnumber"
+          disabled
+          className={classes.width32}
+          label="Ingr. Number"
+          variant="outlined"
+          size="small"
+          value={values.ingrnumber}
+        />
+        <div className="horizont-ingr">
+          {inc.map((_, i) => {
+            return (
+              <TextField
+                key={i}
+                id="ingrfield"
+                name="ingrfield"
+                className={classes.width32}
+                label="Ingredients"
+                variant="outlined"
+                required
+                size="small"
+                onChange={(e) => changeIngrData(e, i)}
+              />
+            );
+          })}
+
+          <Button id="add" variant="outlined" onClick={addMore}>
+            Add more
+          </Button>
+        </div>
+
         {desc.map((_, i) => {
           let stepnumber = i + 1;
 
@@ -235,38 +265,6 @@ export default function BasicTextFields() {
         >
           Add Next Step
         </Button>
-        <TextField
-          id="ingrnumber"
-          name="ingrnumber"
-          disabled
-          className={classes.width32}
-          label="Total Number of Ingredients"
-          variant="outlined"
-          size="small"
-          value={values.ingrnumber + 1}
-        />
-
-        <div className="horizont-ingr">
-          {inc.map((_, i) => {
-            return (
-              <TextField
-                key={i}
-                id="ingrfield"
-                name="ingrfield"
-                className={classes.width32}
-                label="Ingredients"
-                variant="outlined"
-                required
-                size="small"
-                onChange={(e) => changeIngrData(e, i)}
-              />
-            );
-          })}
-
-          <Button id="add" variant="outlined" onClick={addMore}>
-            Add more
-          </Button>
-        </div>
 
         <Button type="submit" variant="contained" color="secondary">
           Add Recipe
