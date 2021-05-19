@@ -1,25 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const RecipeBox = ({
-  ingredients,
-  img,
-  name,
-  serves,
-  preptime,
-  cooktime,
-  id,
-  randomcolor,
-}) => {
+const RecipeBox = () => {
+  const [state, setState] = useState({
+    ingredients,
+    img,
+    name,
+    serves,
+    preptime,
+    cooktime,
+    link,
+    randomcolor,
+  });
+
+  const boxcolors = [
+    "box-pink",
+    "box-green",
+    "box-blue",
+    "box-yellow",
+    "box-orange",
+    "box-purple",
+    "",
+  ];
+
+  let newboxcolor = () => {
+    for (let i = 0; i <= boxcolors.length; i++) {
+      return boxcolors[i];
+    }
+  };
+  boxcolors[Math.floor(Math.random() * (boxcolors.length + 1))];
   return (
     <>
-      {/* <Link to={`recipes/${link}`}> */}
-      <Link
-        to={{
-          pathname: `recipes/${name.split(" ").join("-")}`,
-          state: { id },
-        }}
-      >
+      <Link to={`recipes/${link}`}>
         <div className="recipe-box">
           <h2>{name}</h2>
           <div className={`box ${randomcolor}`}>

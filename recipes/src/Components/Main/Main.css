@@ -20,6 +20,21 @@ main {
     "a d "
     "a e";
 }
+
+.box-pink {
+  background-color: #ffc8c8;
+}
+
+.box-green {
+  background-color: #c8fff2;
+}
+.box-yellow {
+  background-color: #fff6c8;
+}
+.box-orange {
+  background-color: #ffe6c8;
+}
+
 .a {
   grid-area: a;
 }

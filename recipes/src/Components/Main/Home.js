@@ -7,6 +7,7 @@ class Home extends Component {
     recipes: [],
     isLoading: false,
   };
+
   componentDidMount() {
     this.setState({ isLoading: true });
     fetch("https://lit-sierra-74086.herokuapp.com/recipe/all")
@@ -15,6 +16,17 @@ class Home extends Component {
   }
 
   render() {
+    const boxcolors = [
+      "box-pink",
+      "box-green",
+      "box-blue",
+      "box-yellow",
+      "box-orange",
+      "box-purple",
+    ];
+
+    let newboxcolor = boxcolors[Math.floor(Math.random() * boxcolors.length)];
+
     const recipeslist = this.state.recipes.map((recipes) => {
       return (
         <RecipeBox
@@ -25,10 +37,12 @@ class Home extends Component {
           preptime={recipes.prepTime}
           cooktime={recipes.cookTime}
           img={recipes.img}
-          link={recipes.id}
+          id={recipes.id}
+          randomcolor={newboxcolor}
         />
       );
     });
+
     return (
       <section>
         <h1>

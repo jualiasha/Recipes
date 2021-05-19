@@ -22,9 +22,9 @@ footer ul li a:hover {
 footer img {
   position: absolute;
   bottom: 0px;
-  right: 10rem;
+  right: 25%;
   z-index: 990;
-  width: 40rem;
+  max-width: 40rem;
 }
 
 footer a {

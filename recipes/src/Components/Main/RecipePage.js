@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import axios from "axios";
 import Categories from "./Categories";
@@ -27,14 +27,16 @@ const RecipePage = () => {
     checked: false,
   });
 
-  let { id } = useParams();
-
+  let location = useLocation();
   let history = useHistory();
 
   useEffect(() => {
     if (!recipe) {
       axios
-        .get("https://lit-sierra-74086.herokuapp.com/recipe/find/" + id)
+        .get(
+          "https://lit-sierra-74086.herokuapp.com/recipe/find/" +
+            location.state.id
+        )
         .then((res) => setRecipe(res.data));
     }
   });
