@@ -64,7 +64,7 @@ main {
 .box p {
   font-weight: 500;
   border-bottom: 2px solid #000;
-  padding: 1rem;
+  padding: 1rem 0.4rem;
 }
 
 .box p:nth-child(5) {

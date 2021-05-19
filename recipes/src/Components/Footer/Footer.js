@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+
 import "./Footer.css";
 
 const Footer = () => {

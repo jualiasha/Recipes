@@ -82,3 +82,42 @@ button {
   margin-right: 3rem;
   text-decoration: none;
 }
+
+/*Mobile Menu*/
+
+#mobileicon {
+  display: none;
+}
+
+#mobilemenu {
+  background-color: #caf7f8;
+  position: absolute;
+  right: 0;
+  top: 95px;
+  padding: 2rem;
+  width: 30%;
+  border: 1px solid #ffa6f3;
+}
+
+#mobilemenu li {
+  display: block;
+  margin: 1rem 0;
+  font-size: 20px;
+}
+
+#mobilemenu ul li a:hover {
+  background-image: none;
+  color: #000;
+}
+
+@media (max-width: 901px) {
+  .logo {
+    font-size: 40px;
+  }
+  #mobileicon {
+    display: block;
+  }
+  nav {
+    display: none;
+  }
+}

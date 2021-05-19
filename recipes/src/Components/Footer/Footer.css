@@ -30,3 +30,32 @@ footer img {
 footer a {
   color: #fff261;
 }
+
+/*Media*/
+
+@media (max-width: 1200px) {
+  footer img {
+    right: 20%;
+    max-width: 35rem;
+  }
+}
+
+@media (max-width: 975px) {
+  footer img {
+    right: 20%;
+    max-width: 30rem;
+  }
+}
+
+@media (max-width: 850px) {
+  footer img {
+    right: 20%;
+    max-width: 25rem;
+  }
+}
+
+@media (max-width: 750px) {
+  footer img {
+    display: none;
+  }
+}
