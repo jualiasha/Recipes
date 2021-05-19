@@ -1,38 +1,57 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MobileMenu = () => {
+const MobileMenu = ({ click }) => {
   return (
     <div id="mobilemenu">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link onClick={click} to="/">
+            Home
+          </Link>
         </li>
         <li>
           <ul>
-            <Link to="/recipes"> Recipes</Link>
+            <Link onClick={click} to="/recipes">
+              {" "}
+              Recipes
+            </Link>
             <li>
-              <Link to="/salads">Salads</Link>
+              <Link onClick={click} to="/Salads">
+                Salads
+              </Link>
             </li>
             <li>
-              <Link to="/soups">Soups</Link>
+              <Link onClick={click} to="/Soups">
+                Soups
+              </Link>
             </li>
             <li>
-              <Link to="/chicken">Chicken</Link>
+              <Link onClick={click} to="/Chicken">
+                Chicken
+              </Link>
             </li>
             <li>
-              <Link to="/fish">Fish</Link>
+              <Link onClick={click} to="/Fish">
+                Fish
+              </Link>
             </li>
             <li>
-              <Link to="/beef">Beef</Link>
+              <Link onClick={click} to="/Beef">
+                Beef
+              </Link>
             </li>
             <li>
-              <Link to="/sweets">Sweets</Link>
+              <Link onClick={click} to="/Sweets">
+                Sweets
+              </Link>
             </li>
           </ul>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link onClick={click} to="/about">
+            About
+          </Link>
         </li>
       </ul>
     </div>

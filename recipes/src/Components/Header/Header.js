@@ -35,7 +35,7 @@ const Header = () => {
             style={{ fontSize: 50 }}
             onClick={mobilemenuHandlerShow}
           ></MenuOpenIcon>
-          {mobMenu ? <MobileMenu /> : null}
+          {mobMenu ? <MobileMenu click={mobilemenuHandlerShow} /> : null}
         </div>
       </div>
     </header>
