@@ -7,8 +7,9 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import "./Footer.css";
 
 const Footer = () => {
-  let location = useLocation();
+  let location = useLocation(); /*defines what path we have on the page*/
 
+  /*different footer images for different routes*/
   const renderfooterimage = location.pathname.includes("recipes")
     ? "/assets/images/recipesfooter.png"
     : location.pathname.includes("about")
