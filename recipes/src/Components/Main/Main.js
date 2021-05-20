@@ -62,11 +62,11 @@ const SideNav = ({
   return (
     <ul>
       <li>
-        <img className="li-image" src="/assets/images/salad.png" alt="salad" />
+        <img className="li-image" src="/assets/images/Salad.png" alt="salad" />
         <NavLink to={`/${saladslink}`}>{saladslink}</NavLink>
         <img
           className="li-image-after"
-          src="/assets/images/spoon.png"
+          src="/assets/images/Spoon.png"
           alt="spoon"
         />
       </li>

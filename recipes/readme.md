@@ -16,7 +16,7 @@
 
 Figma :[ here](https://www.figma.com/file/tyHVI7ZkOVrAd0POmy3qfO/Recipes?node-id=0%3A1);
 
-live page is [here](https://public.bc.fi/s2100159/recipe/)
+live page is [here](https://recipes-web-app-eta.vercel.app/)
 
 backendserver (Heroku) [here](https://lit-sierra-74086.herokuapp.com/recipe/all)
 
