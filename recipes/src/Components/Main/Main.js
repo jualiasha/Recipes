@@ -25,6 +25,7 @@ const Aboutpage = () => {
   );
 };
 
+/*Header navigation*/
 const Nav = () => {
   return (
     <nav>
@@ -49,6 +50,7 @@ const Nav = () => {
   );
 };
 
+/*Sidebar Navigation*/
 const SideNav = ({
   sweetslink,
   saladslink,

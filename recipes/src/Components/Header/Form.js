@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BasicTextFields() {
   const classes = useStyles();
+  /*form inputs*/
   const [values, setValues] = useState({
     name: "",
     img: "",
@@ -52,14 +53,17 @@ export default function BasicTextFields() {
     serves: "",
     ingredients: [],
   });
-  /* const [ingredients, setIngredients] = useState([{ id: 1, ingr: "" }]); */
+  /*Seaprate class for Ingredients*/
   const [inc, setInc] = useState([" "]);
+  /*Separate class for description*/
   const [desc, setDesc] = useState([" "]);
 
+  /*setting values of the input fields*/
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
+  /*setting ingredients values*/
   const changeIngrData = (e, i) => {
     const list = [...inc];
     list[i] = e.target.value;
@@ -73,6 +77,7 @@ export default function BasicTextFields() {
     setValues((prevValues) => ({ ...prevValues, ingredients: inc }));
   }, [inc]);
 
+  /*setting description data*/
   const changeDescData = (e, i) => {
     const desclist = [...desc];
     desclist[i] = e.target.value;
@@ -85,6 +90,7 @@ export default function BasicTextFields() {
     setValues((prevValues) => ({ ...prevValues, description: desc }));
   }, [desc]);
 
+  /*add more ingredients button functionality*/
   const addMore = (e, i) => {
     e.preventDefault();
     const newIngr = "";
@@ -93,12 +99,14 @@ export default function BasicTextFields() {
     setValues({ ...values, ingrnumber: inc.length + 1 });
   };
 
+  /*add description steps functionality*/
   const stepsadd = (e, i) => {
     e.preventDefault();
     const newStep = "";
     setDesc([...desc, newStep]);
   };
 
+  /*submit function*/
   const submitData = (e) => {
     e.preventDefault();
 

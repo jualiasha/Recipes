@@ -6,6 +6,7 @@ import { SideNav } from "./Main";
 import "./Categories.css";
 
 class Categories extends Component {
+  /*links to categories*/
   state = {
     salads: "Salads",
     soups: "Soups",
@@ -16,7 +17,6 @@ class Categories extends Component {
     vegan: "Vegan",
     sweets: "Sweets",
     recipes: [],
-    isLoading: false,
   };
 
   render() {

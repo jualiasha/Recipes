@@ -21,13 +21,18 @@ const GreenCheckbox = withStyles({
   checked: {},
 })((props) => <Checkbox color="default" {...props} />);
 
+/*Single recipe page*/
 const RecipePage = () => {
+  /*state for recipe to fetch info*/
   const [recipe, setRecipe] = useState();
+  /*state for shecking steps in description*/
   const [state, setState] = useState({
     checked: false,
   });
 
+  /*defining location of the page*/
   let location = useLocation();
+  /*defining previous page for "go back" button*/
   let history = useHistory();
 
   useEffect(() => {
@@ -40,11 +45,15 @@ const RecipePage = () => {
         .then((res) => setRecipe(res.data));
     }
   });
+  /*handling checking marks*/
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
+
+  /*fetched recipe*/
   let recipedata = undefined;
 
+  /*if there is no recipe show Loading*/
   if (!recipe) {
     recipedata = <h1>Loading...</h1>;
   }

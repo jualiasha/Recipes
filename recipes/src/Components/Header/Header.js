@@ -8,8 +8,10 @@ import MobileMenu from "./MobileMenu";
 import "./Header.css";
 
 const Header = () => {
+  /*class for mobile menu show/hide*/
   const [mobMenu, setmobMenu] = useState(false);
 
+  /*show/hide mobile menu on click*/
   const mobilemenuHandlerShow = () => {
     setmobMenu(!mobMenu);
   };

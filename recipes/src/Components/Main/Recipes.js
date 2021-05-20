@@ -1,10 +1,11 @@
 import React from "react";
-/* import Search from "./Search"; */
 import { Component } from "react";
 import Categories from "./Categories";
 import Searchui from "./Searchui";
 import RecipeBox from "./RecipeBox";
+import Loading from "./Loading"
 
+/*All recipes page*/
 class Recipes extends Component {
   state = {
     recipes: [],
@@ -17,16 +18,21 @@ class Recipes extends Component {
       .then((res) => res.json())
       .then((data) => this.setState({ recipes: data, isLoading: false }));
   }
+
+  /*getting serach input*/
   searchValueHandler = (event) => {
     this.setState({ searchInput: event.target.value });
     console.log(this.state.searchInput);
   };
   render() {
+    /*filtering recipes according to the searchinput*/
     const recipesfilter = this.state.recipes.filter((recipes) => {
       return recipes.name
         .toLocaleLowerCase()
         .includes(this.state.searchInput.toLocaleLowerCase());
     });
+
+    /*random colors for recipe cards*/
     const boxcolors = [
       "box-pink",
       "box-green",
@@ -35,6 +41,8 @@ class Recipes extends Component {
       "box-orange",
       "box-purple",
     ];
+
+    /*making list of recipe cards*/
     const recipeslist = recipesfilter.map((recipes) => {
       return (
         <RecipeBox
@@ -58,6 +66,7 @@ class Recipes extends Component {
         <div className="recipe-container">
           <div id="left">
             <h2 className="category-name">Best recipes ever</h2>
+            {this.state.isLoading&&<Loading/>}
             <div className="recipeslist">{recipeslist}</div>
           </div>
           <Categories />

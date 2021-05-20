@@ -1,8 +1,10 @@
 import React from "react";
 import { Component } from "react";
 import RecipeBox from "./RecipeBox";
+import Loading from "./Loading";
 
 class Home extends Component {
+  /*state for recipes(array) and loading image*/
   state = {
     recipes: [],
     isLoading: false,
@@ -16,6 +18,7 @@ class Home extends Component {
   }
 
   render() {
+    /*colors/classes of rendered cards*/
     const boxcolors = [
       "box-pink",
       "box-green",
@@ -25,6 +28,7 @@ class Home extends Component {
       "box-purple",
     ];
 
+    /*getting list of recipe cards*/
     const recipeslist = this.state.recipes.map((recipes) => {
       return (
         <RecipeBox
@@ -47,7 +51,7 @@ class Home extends Component {
           Today people choose
           <img className="decor" src="/assets/images/Wine.png" alt="wine" />
         </h1>
-
+        {this.state.Loading && <Loading />}
         <div className="recipeslist">{recipeslist}</div>
       </section>
     );

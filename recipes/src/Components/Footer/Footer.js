@@ -5,7 +5,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 import "./Footer.css";
-
+/*Footer*/
 const Footer = () => {
   let location = useLocation(); /*defines what path we have on the page*/
 
