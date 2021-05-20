@@ -25,8 +25,6 @@ class Home extends Component {
       "box-purple",
     ];
 
-    let newboxcolor = boxcolors[Math.floor(Math.random() * boxcolors.length)];
-
     const recipeslist = this.state.recipes.map((recipes) => {
       return (
         <RecipeBox
@@ -38,7 +36,7 @@ class Home extends Component {
           cooktime={recipes.cookTime}
           img={recipes.img}
           id={recipes.id}
-          randomcolor={newboxcolor}
+          randomcolor={boxcolors[Math.floor(Math.random() * boxcolors.length)]}
         />
       );
     });

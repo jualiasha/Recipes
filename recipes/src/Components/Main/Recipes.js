@@ -27,6 +27,14 @@ class Recipes extends Component {
         .toLocaleLowerCase()
         .includes(this.state.searchInput.toLocaleLowerCase());
     });
+    const boxcolors = [
+      "box-pink",
+      "box-green",
+      "box-blue",
+      "box-yellow",
+      "box-orange",
+      "box-purple",
+    ];
     const recipeslist = recipesfilter.map((recipes) => {
       return (
         <RecipeBox
@@ -38,6 +46,7 @@ class Recipes extends Component {
           cooktime={recipes.cookTime}
           img={recipes.img}
           id={recipes.id}
+          randomcolor={boxcolors[Math.floor(Math.random() * boxcolors.length)]}
         />
       );
     });
