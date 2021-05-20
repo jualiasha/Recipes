@@ -123,3 +123,22 @@ main {
   justify-content: space-between;
   flex-direction: row;
 }
+
+.aboutdescription {
+  margin-top: 2rem;
+}
+
+.aboutdescription p {
+  margin: 1rem 0;
+}
+
+.aboutdescription ul {
+  color: crimson;
+  font-weight: 500;
+}
+
+.aboutdescription li {
+  display: list-item;
+  margin: 0.5rem 0;
+  list-style-type: disc;
+}

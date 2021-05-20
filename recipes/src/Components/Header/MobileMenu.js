@@ -11,7 +11,7 @@ const MobileMenu = ({ click }) => {
           </Link>
         </li>
         <li>
-          <ul>
+          <ul className="innerul">
             <Link onClick={click} to="/recipes">
               {" "}
               Recipes

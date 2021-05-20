@@ -90,17 +90,18 @@ button {
 }
 
 #mobilemenu {
-  background-color: #caf7f8;
+  background-color: #caf7f8f1;
   position: absolute;
   right: 0;
   top: 95px;
   padding: 2rem;
   width: 30%;
   border: 1px solid #ffa6f3;
+  box-shadow: 20px 5px 30px #888888;
 }
 
 #mobilemenu li {
-  display: block;
+  display: list-item;
   margin: 1rem 0;
   font-size: 20px;
 }
@@ -108,6 +109,11 @@ button {
 #mobilemenu ul li a:hover {
   background-image: none;
   color: #000;
+  font-size: 21px;
+}
+
+.innerul li {
+  margin-left: 2rem !important;
 }
 
 @media (max-width: 901px) {
