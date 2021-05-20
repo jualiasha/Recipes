@@ -12,7 +12,7 @@
 - HTML
 - CSS
 
-![Markdown Logo](recipes/public/assets/images/preview.jpg)
+![Markdown Logo](public/assets/images/preview.jpg)
 
 Figma :[ here](https://www.figma.com/file/tyHVI7ZkOVrAd0POmy3qfO/Recipes?node-id=0%3A1);
 
