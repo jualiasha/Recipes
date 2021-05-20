@@ -7,8 +7,8 @@ import "./Categories.css";
 
 class Categories extends Component {
   state = {
-    salads: "Salads",
-    soups: "Soups",
+    salads: "salads",
+    soups: "soups",
     beef: "Beef",
     pork: "Pork",
     chicken: "Chicken",
