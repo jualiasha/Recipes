@@ -71,21 +71,21 @@ const SideNav = ({
         />
       </li>
       <li>
-        <img className="li-image" src="/assets/images/soup.png" alt="soup" />
+        <img className="li-image" src="/assets/images/Soup.png" alt="soup" />
         <NavLink to={`/${soupslink}`}>{soupslink}</NavLink>
       </li>
       <li>
         <NavLink to={`/${beeflink}`}>{beeflink}</NavLink>
         <img
           className="li-image-after"
-          src="/assets/images/fork.png"
+          src="/assets/images/Fork.png"
           alt="fork"
         />
       </li>
       <li>
         <img
           className="li-image"
-          src="/assets/images/hot-meals.png"
+          src="/assets/images/Hot-meals.png"
           alt="hot-meals"
         />
         <NavLink to={`/${porklink}`}>{porklink}</NavLink>
@@ -94,7 +94,7 @@ const SideNav = ({
         <NavLink to={`/${chickenlink}`}>{chickenlink}</NavLink>
         <img
           className="li-image-after"
-          src="/assets/images/fork.png"
+          src="/assets/images/Fork.png"
           alt="fork"
         />
       </li>
@@ -102,18 +102,18 @@ const SideNav = ({
         <NavLink to={`/${fishlink}`}>{fishlink}</NavLink>
       </li>
       <li>
-        <img className="li-image" src="/assets/images/vegan.png" alt="vegan" />
+        <img className="li-image" src="/assets/images/Vegan.png" alt="vegan" />
         <NavLink to={`/${veganlink}`}>{veganlink}</NavLink>
         <img
           className="li-image-after"
-          src="/assets/images/spoon.png"
+          src="/assets/images/Spoon.png"
           alt="spoon"
         />
       </li>
       <li>
         <img
           className="li-image"
-          src="/assets/images/sweets.png"
+          src="/assets/images/Sweets.png"
           alt="sweets"
         />
         <NavLink to={`/${sweetslink}`}>{sweetslink}</NavLink>
