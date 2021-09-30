@@ -30,9 +30,9 @@ backendserver (Heroku) [here](https://lit-sierra-74086.herokuapp.com/recipe/all)
 npm install
 npm install react-router-dom
 npm install axios
-npm-install json-server --save-dev
-npm-install @material-ui/core
-npm-install @material-ui/icons
+npm install json-server --save-dev
+npm install @material-ui/core
+npm install @material-ui/icons
 ```
 
 #
